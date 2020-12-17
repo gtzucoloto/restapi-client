@@ -1,0 +1,26 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="id" [value]="productService.formData.id" />
+    <div class="form-group">
+        <label>NAME</label>
+        <input class="form-control form-control-lg" placeholder="Product Name" name="name"
+            #name="ngModel" [(ngModel)]="productService.formData.name"
+            required [class.invalid]="name.invalid && name.touched">
+    </div>
+    <div class="form-group">
+        <label>QUANTITY</label>
+        <input class="form-control form-control-lg" placeholder="Product Quantity" name="quantity"
+            #quantity="ngModel" [(ngModel)]="productService.formData.quantity"
+            required [class.invalid]="quantity.invalid && quantity.touched">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>PRICE</label>
+            <input class="form-control form-control-lg" placeholder="Product Price" name="price"
+                #price="ngModel" [(ngModel)]="productService.formData.price"
+                required [class.invalid]="price.invalid && price.touched">
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>

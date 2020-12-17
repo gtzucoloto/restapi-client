@@ -1,0 +1,31 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Product Detail</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of productService.list">
+                    <td (click)="populateForm(p)">{{p.name}}</td>
+                    <td (click)="populateForm(p)">{{p.quantity}}</td>
+                    <td (click)="populateForm(p)">{{p.price}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(p.id)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <app-product-form></app-product-form>
+    </div>
+</div>
