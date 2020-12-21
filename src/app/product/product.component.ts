@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from '../shared/product.model';
 import { ProductService } from '../shared/product.service';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localePt, 'pt')
 
 @Component({
   selector: 'app-product',

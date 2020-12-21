@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
 import { ProductFormComponent } from './product/product-form/product-form.component';
+import { CurrencyMaskModule } from 'ng2-currency-mask'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductFormComponent } from './product/product-form/product-form.compon
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    CurrencyMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

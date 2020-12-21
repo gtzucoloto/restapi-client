@@ -17,7 +17,7 @@
                 <tr *ngFor="let p of productService.list">
                     <td (click)="populateForm(p)">{{p.name}}</td>
                     <td (click)="populateForm(p)">{{p.quantity}}</td>
-                    <td (click)="populateForm(p)">{{p.price}}</td>
+                    <td (click)="populateForm(p)">{{p.price | currency:'BRL':true:'1.2-2':'pt'}}</td>
                     <td>
                         <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(p.id)"></i>
                     </td>
